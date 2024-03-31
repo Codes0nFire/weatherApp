@@ -1,7 +1,7 @@
 const form = document.querySelector("form");
 const input = document.querySelector("input");
 const putWeatherDataBox = document.querySelector("#weather");
-
+const key=`e266c548e6486d01e58aa75f25ec1147`;
 //handling form submission
 form.addEventListener("submit", function (event) {
   event.preventDefault();//doesnot allow form to be submitted
@@ -19,7 +19,7 @@ async function getWeatherData() {
      
     `;
   const response = await fetch(
-    `https:api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=e266c548e6486d01e58aa75f25ec1147&units=metric`
+    `https:api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=${key}&units=metric`
   );
 
   const data = await response.json();
